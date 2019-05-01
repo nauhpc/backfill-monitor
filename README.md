@@ -17,7 +17,7 @@ useradd nodemgr
 Next, give the user permission to restart the slurmctl daemon. TO do this, edit /etc/sudoers as root and add the following
 
 ```
-Cmnd_Alias MGRCMDS = /bin/kill
+Cmnd_Alias MGRCMDS = /bin/kill, /bin/sed
 nodemgr ALL = NOPASSWD: MGRCMDS
 Defaults!MGRCMDS !requiretty
 ```
