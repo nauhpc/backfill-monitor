@@ -1,0 +1,3 @@
+# Author: Chris Schild <cvs46@nau.edu>
+# Crontab for backfill monitor. Run as user who has access to /var/log/slurm/slurmctld.log and /etc/slurm/slurm.conf
+* */6 * * * <backfillmon.py> ; [ $? != 0 ] && echo "Backfill has not occured recently. Please Investigate." | mail -s "Monsoon: No Backfill" <hpcsupport@nau.edu>
